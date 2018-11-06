@@ -1,5 +1,5 @@
 <!-- templates/base.html -->
-{% load static %}
+{% load staticfiles %}
 <html>
 	<head>
 		<title>Django blog</title>
@@ -9,7 +9,12 @@ stylesheet">
 	</head>
 	<body>
 		<header>
-			<h1><a href="/">Django blog</a></h1>
+			<div class="nav-left">
+				<h1><a href="/">Django blog</a></h1>
+			</div>
+			<div class="nav-right">
+				<a href="{% url 'post_new' %}">+ New Blog Post</a>
+			</div>
 		</header>
 		<div class="container">
 			{% block content %}
